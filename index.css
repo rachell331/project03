@@ -1,0 +1,458 @@
+@charset "utf-8";
+
+/*Reset*********************************/
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    display: block;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    /*font-family: 'Nanum Myeongjo', serif;*/
+}
+
+/*Main*********************************/
+header {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 1px solid rgb(238, 238, 238);
+    /*구분선 : section이랑 구분하기 위함*/
+    position: fixed;
+    /*고정하는 애는 높이를 줄 필요가 없음*/
+    top: 0;
+    left: 0;
+    /*margin으로 효과주기 위한 작업: 포지션의 위치를 화면 첫 단으로 설정해주기 위함*/
+    z-index: 9999;
+}
+
+header .lnb {
+    /*width: 100%;*/
+    height: 40px;
+    background-color: #d3d3d3;
+    line-height: 40px;
+}
+
+header .lnb .inner-lnb {
+    width: 80%;
+    max-width: 1280px;
+    /*너비는 80%를 적용하되, 최대 너비가 1280을 넘지 않도록 하는 조건 : 필요한 이유는 내가 작은 화면이나 랩탑에서 1280을 못잡을 경우 , 그 화면크기의 80퍼 만큼을 먼저 보여주고, 큰화면일 경우 그 화면크기의 80퍼는 1280을 넘게 되므로, 1280로 만들기*/
+    /*width: 1280px;*/
+    margin: 0 auto;
+    /*overflow: hidden;*/
+    /*float 해제하는 역할+float된 자식의 높이확인*/
+    background-color: green;
+}
+
+header .lnb .inner-lnb ul {
+    float: right;
+}
+
+header .lnb .inner-lnb ul li {
+    float: left;
+    /*부모가 float되고 자식도 float됐을 때 해제됨*/
+    margin-right: 10px;
+    letter-spacing: -1px;
+}
+
+header .lnb .inner-lnb ul li:last-child {
+    margin-right: 0;
+    text-indent: -9999px;
+    width: 60px;
+    height: 40px;
+    background: rgb(47, 28, 17) url(img/ico_user_info_line.png) no-repeat 50% 50%;
+
+}
+
+header .lnb .inner-lnb ul li > a {
+    color: #333;
+}
+
+header .lnb .inner-lnb ul li > a:hover {
+    font-weight: bold;
+    color: rgb(47, 28, 17);
+}
+
+header .inner-header {
+    width: 80%;
+    height: 100px;
+    /*임의로 높이를 잡는 경우: 1)주어진 공간의 배경이미지를 넣어서 내용을 꾸밀때, 2)헤더 부분의 높이값 지정(60px ~80px정도)(원래 총 헤더는 140px이상을 넘지 않음)*/
+    max-width: 1280px;
+    margin: 0 auto;
+    /*background-color: yellow;*/
+    /*float 해제된 거 확인하기*/
+}
+
+.inner-header .logo {
+    width: 70px;
+    height: 100%;
+    /*세로 기준으로 가변_너비의 경우 화면비율을 조절했을 때 로고의 크기가 변할 수 있기 때문*/
+    float: left;
+    padding: 15px 0;
+    box-sizing: border-box;
+}
+
+.inner-header .logo a img {
+    width: 100%;
+    /*로고를 감싸는 박스를 70px로 고정값을 주었기 때문에 퍼센트로넣은것.*/
+    height: 70px;
+    /*고정값을 주고 싶을 경우 부모나 자식 둘 중에 하나에 고정값을 부여해야 함?_이게 뭔소리냐*/
+}
+
+.inner-header nav {
+    float: left;
+    /*outline: 3px solid red;*/
+    margin-left: 100px;
+}
+
+.inner-header nav ul li {
+    float: left;
+    line-height: 100px;
+    margin: 0 30px;
+}
+
+.inner-header nav ul li a {
+    font-family: 'Arial';
+    font-weight: 700;
+    letter-spacing: .2px;
+    text-transform: uppercase;
+    color: rgb(47, 28, 17);
+}
+
+.inner-header nav ul li a:hover {
+    color: rgb(207, 102, 26)
+}
+.inner-header nav ul li.active a {
+    color: rgb(207,102,26);
+}
+#btnSearch {
+    float: right;
+}
+
+#btnSearch a {
+    width: 20px;
+    height: 100px;
+    text-indent: -9999px;
+    /*인라인이면 적용 안되는 점 참고*/
+    background: url(img/ico_search.png) no-repeat center;
+}
+
+/*Main*********************************/
+main {
+    margin-top: 140px;
+    width: 100%;
+    height: 500px;
+    background: url(img/main02.jpg) no-repeat top;
+    background-size: cover;
+}
+
+main .main-box {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+    position: relative;
+}
+
+main .main-box a {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    padding: 10px 30px;
+    border: 3px solid #fff;
+    border-radius: 50px;
+    display: inline-block;
+    position: absolute;
+    top: 68%;
+    left: 129px;
+}
+
+/*보통은 배경이미지 하나 넣고, 요소별로 다 따로 주어진 너비에 따라 고정값으로 넣으면, 화면비율을 바꿔도 이미지 100%를 다 볼수 있다. ex. 음료이미지 따로, 글자 따로, 버튼 따로 */
+
+main .main-box a:hover {
+    background-color: #fff;
+    color: rgb(98, 197, 229);
+    font-weight: bold;
+}
+
+/*Section*********************************/
+
+/**Event************/
+section .event {
+    width: 100%;
+
+}
+
+section .event a img {
+    width: 100%;
+    display: block;
+}
+
+/*비율은 80%~125%에서 안정적으로 보이면 크게 문제되지 않음*/
+
+/**MD's Pick************/
+section .md-pick {
+    width: 100%;
+    margin: 60px 0 80px;
+}
+
+section .md-pick h2 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: rgb(207, 102, 26);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+section .md-pick .md-wrap {
+    /*outline: 3px solid red;*/
+    width: 1280px;
+    /*화면비율에 따른 선택이 아니라 고정적인 값이 계속해서 들어가야 할 경우*/
+    margin: 0 auto;
+}
+
+.md-wrap .md-box {
+    width: 25%;
+    float: left;
+}
+
+.md-wrap .md-box .photo {
+    position: relative;
+    /*quick의 기준요소*/
+}
+
+.md-wrap .md-box .photo .quick {
+    font-size: 18px;
+    letter-spacing: 1.4px;
+    background-color: rgb(243, 130, 0);
+    padding: 10px 20px;
+    /*display: inline-block;*/
+    display: none;
+    position: absolute;
+    top: 68%;
+    left: 50%;
+    margin-left: -25%;
+    color: #fff;
+}
+
+.md-box .photo:hover img {
+    opacity: .4;
+    transition: all .6s ease-in;
+}
+
+.md-box .photo:hover .quick {
+    display: inline-block;
+}
+
+.md-box .txt-box {
+    text-align-last: center;
+}
+
+.md-box .txt-box .name {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 50px;
+    letter-spacing: -1px;
+}
+
+.md-box .txt-box .des {
+    letter-spacing: -1px;
+    line-height: 40px;
+}
+
+.md-box .txt-box .price {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    color: rgb(207, 102, 29);
+}
+
+/**What's New************/
+section .new {
+    width: 1280px;
+    margin: 0 auto;
+    margin-bottom: 80px;
+    /*outline: 3px solid red;*/
+}
+
+section .new h2 {
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: rgb(207, 102, 26);
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.new .box {
+    float: left;
+    width: 400px;
+    margin-right: 40px;
+}
+
+.new .box:last-child {
+    margin-right: 0;
+}
+
+.new .box a {
+    margin-bottom: 30px;
+    overflow: hidden;
+
+}
+
+.new .box a img {
+    width: 100%;
+    display: block;
+    transition: all .4s ease-in;
+}
+
+.new .box a:hover img {
+    transform: scale(1.3);
+}
+
+.new .box p {
+    text-align: center;
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: 700;
+    font-size: 18px;
+    color: rgb(207, 102, 26);
+}
+
+
+/**Instagram************/
+section .instagram {
+    width: 100%;
+    background-color: rgb(124, 81, 161);
+    padding: 55px 0 40px;
+    text-align: center;
+}
+
+section .instagram h2 {
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: -1px;
+    padding-bottom: 30px;
+}
+
+section .instagram .image-wrap {
+    width: 80%;
+    max-width: 1280px;
+    background: rgb(243, 130, 0);
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.image-wrap .img-box {
+    /*너비에 %랑 px 모두 다 들어있기 때문에 float할 때자식요소 width값은 %로 주는게 좀더 안정적임*/
+    width: 16.66666666667%;
+    float: left;
+}
+
+.image-wrap .img-box a img {
+    /*부모에 맞춰서 사이즈 조절하기 위함*/
+    width: 100%;
+    display: block;
+    /*인라인요소에서 블록요소로 바뀌므로 부모만큼을 무조건 사용하기 위해서 꽉 채워짐*/
+    /*float: left*/
+    ;
+    /*인라인이기 때문에 부모자리에 둥둥 떠서 부모의 시작부분에 붙게 되는 것*/
+    transition: all .4s ease-in;
+}
+
+.image-wrap .img-box a:hover img {
+    opacity: 0.6;
+}
+
+.instagram .sns-link {
+    width: 400px;
+    height: 40px;
+    line-height: 40px;
+    background-color: rgb(243, 130, 0);
+    font-family: 'Nanum Myeongjo', serif;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 auto;
+    /*display: block으로 하고, 너비값이 주어져 있으면 margin 0 auto로 가운데 정렬이 가능하다.*/
+    /*display: inline-block;*/
+    font-weight: 700;
+}
+
+
+/**Footer************/
+footer {
+    width: 100%;
+    background-color: lightgray;
+
+}
+footer a {
+    display: inline;
+    color: #333;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer .inner-footer {
+    width: 80%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 0;
+    /*overflow: hidden;*/ /*overflow의 다른 기능*/
+    }
+.inner-footer .sitemap {
+    /*margin: 60px auto;*/
+    margin-bottom: 60px;
+}
+.inner-footer .sitemap .mapbox {
+    width: 16.66666666666667%;
+    float: left;
+}
+.inner-footer .sitemap .mapbox h2 {
+    margin-bottom: 20px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 18px;
+    color: rgb(207, 102, 26);
+}
+
+.inner-footer .sitemap .mapbox ul li {
+    letter-spacing: -0.4px;
+    margin-bottom: 10px;
+}
+
+.inner-footer .footer-bottom {
+    border-top: 1px solid #333;
+    padding: 30px 0;
+}
+.inner-footer .footer-bottom .link {
+   width: 60%;
+    float: left;
+}
+.inner-footer .footer-bottom .sns{
+    width: 30%;
+    float: right;
+    text-align: right;
+}
+.inner-footer .footer-bottom p {
+    clear: both;
+}
+
+
+
+
+
+
+

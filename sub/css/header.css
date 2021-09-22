@@ -1,0 +1,131 @@
+/* header.css */
+@charset "utf-8";
+
+/**RESET*******************/
+* {
+    margin: 0;
+    padding: 0;
+}
+ul,ol,li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+.clearfix:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+    /*font-family: 'Nanum Myeongjo', serif;*/
+}
+
+/**HEADER*****************************************/
+header {
+    width: 100%;
+    background-color: rgb(255,255,255);
+    border-bottom: 1px solid rgb(238,238,238);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+header .lnb {
+    /*width: 100%;*/
+    background-color: lightgray;
+    height: 40px;
+    line-height: 40px;
+}
+header .lnb .inner-lnb {
+    width: 80%;
+    max-width: 1280px;
+    /*width: 1280px;*/
+    background-color: red;
+    margin: 0 auto;
+    /*overflow: hidden;*/ /*float된 자식 높이 확인*/
+}
+header .lnb .inner-lnb ul {
+    float: right;
+}
+header .lnb .inner-lnb ul li {
+    float: left;
+    margin-right: 10px;
+    letter-spacing: -1px;
+}
+header .lnb .inner-lnb ul li:last-child {
+    margin-right: 0;
+    text-indent: -9999px;
+    width: 60px;
+    height: 40px;
+    background: rgb(47,28,17) url(../img/ico_user_info_line.png) no-repeat 50% 50%;
+}
+header .lnb .inner-lnb ul li a {
+    display: block;
+    color: #333;
+}
+header .lnb .inner-lnb ul li a:hover {
+    font-weight: bold;
+    color: rgb(47,28,17);
+}
+
+header .inner-header {
+    width: 80%;
+    max-width: 1280px;
+    height: 100px;
+    margin: 0 auto;
+    /*background-color: yellow;*/
+}
+
+.inner-header .logo {
+    width: 70px;
+    height: 100%;
+    float: left;
+    padding: 15px 0;
+    box-sizing: border-box;
+}
+.inner-header .logo a {
+    display: block;
+}
+.inner-header .logo a img {
+    /*width: 100%;*/
+    height: 70px;
+}
+
+.inner-header nav {
+    float: left;
+    margin-left: 100px;
+    /*outline: 3px solid red;*/
+}
+.inner-header nav ul li {
+    float: left;
+    line-height: 100px;
+    margin: 0 30px;
+}
+.inner-header nav ul li a {
+    /*font-size: 18px;*/
+    font-family: Arial;
+    text-transform: uppercase;
+    font-weight: 700; 
+    color: rgb(47,28,17);
+    letter-spacing: -0.2px;
+}
+.inner-header nav ul li a:hover {
+    color: rgb(207,102,26);
+}
+
+#btnSearch {
+    float: right;
+}
+#btnSearch a {
+    width: 20px;
+    height: 100px;
+    display: block;
+    text-indent: -9999px; 
+    background: url(../img/ico_search.png) no-repeat center;
+}
+

@@ -1,0 +1,280 @@
+/* sub.css */
+@charset "utf-8";
+
+/* header.css | footer.css*/
+@import url(header.css);
+@import url(footer.css);
+/**import로 끌고 오는 대표적인 예는 font.css이다.*/
+
+/*구글 웹폰트*/
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+
+/*section***********************************/
+section {
+    margin-top: 140px;
+}
+
+/* location***********************************/
+.location {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(105, 81, 157);
+}
+
+.location ul {
+    width: 80%;
+    max-width: 1280px;
+    margin: 0 auto;
+    /* header랑 맞추기 */
+}
+
+.location ul li {
+
+    float: left;
+    /* 가로나열 */
+    margin-right: 20px;
+    /*요소를 기준으로 padding이나 margin활용*/
+    background: url(../img/img_arr_location.png) no-repeat 0 center;
+    /*icon img 배경이미지로 넣기*/
+    padding-left: 24px;
+    /*4px img 차지 + 왼쪽 공백 + 오른족 Mraing right*/
+}
+
+.location ul li:first-child {
+    padding-left: 0;
+    background: 0;
+}
+
+.location ul li a {
+    color: #fff;
+    font-family: Arial;
+    font-size: 14px;
+    line-height: 30px;
+}
+
+.location ul li a:hover {
+    text-decoration: underline;
+}
+
+
+/* mainbanner***********************************/
+.mainbanner {
+    width: 100%;
+    /*내용에 따라 높이가 변하도록 높이값을 따로 지정하진 않음_내 자식의 높이만큼 잡는다는 뜻*/
+}
+
+.mainbanner img {
+    width: 100%;
+}
+
+/* value***********************************/
+.value {
+    width: 100%;
+}
+
+.value > ul {
+    /*목록(block요소)은 자식으로 쓰는 경우가 더 많음*/
+    width: 1280px;
+    margin: 60px auto;
+    text-align: center;
+    /*outline: 3px solid black;*/
+}
+
+.value > ul > li {
+    float: left;
+    /*가로배열 시키기*/
+    width: 360px;
+    /* 360으로 정한 이유 : 360px*4=1440px  1440px-1280px=160px/4=40px ->아이콘 이미지 크기랑 비슷함 */
+    background: url(../img/bg_plus_icon.gif) no-repeat 0 60px;
+    /* 160px-40px=120px/2=60px*/
+    margin: 0 -20px; /* 40px의 절반만큼 이동해주기*/
+    /* 마진이용해서 왼쪽으로 땡기기*/
+    /* 요소가 가지고 있는 바깥쪽 여백 조절, 왼쪽&오른쪽으로 마이너스 여백 주기. 요소 위에 요소가 있는 것. */
+}
+
+.value > ul > li:first-child {
+    background: none;
+}
+.value li img {
+    width: 160px;
+    display: block;
+    margin: 0 auto 25px;
+}
+.value dl {}
+.value dl dt {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: rgb(105,81,157);
+}
+.value dl dd {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgb(47,28,17);
+}
+.value dl .eng {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+    color: rgb(105,81,157);
+    font-size: 14px;
+}
+
+/* best***********************************/
+.best {
+    width: 100%; /* 이미지가 100%가 다 들어가있음. 부모만큼 부모 너비의 100%를 잡게 해주기 위함*/
+    margin-bottom: 80px;
+    text-align: center;
+}
+.best h3 {
+    font-size: 20px;
+    font-weight: 100;
+    line-height: 1.6;
+    color: rgb(50,50,50);
+    margin-bottom: 30px;
+}
+.best h2 {
+    font-size: 2em;
+    color: rgb(207,102,26);
+    margin-bottom: 60px;
+}
+.best .best-banner {
+    width: 100%;
+    height: 430px;
+    /*배경은 내용 만큼 적용되는데, 현재 html에 내용이 없으므로 높이값 설정*/
+    background: url(../img/bg_coffeebean-korea_banner02.jpg) no-repeat 50%/100%; /*좌우 50%, 상하는 중앙으로 위치하기 + 주어진 부모의 너비를 가득채워서 100%채우기*/
+}
+
+/* coffee***********************************/
+.coffee-wrap {
+    width: 100%;
+    margin-bottom: 80px;
+}
+.coffee-wrap .coffee {
+    width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+.coffee-wrap .coffee h2 {
+    font-family: 'Merriweather', serif;
+    font-size: 2em;
+    color: rgb(207,102,26);
+    letter-spacing: 1.2px;
+    background: url(../img/bg_bar6.gif) repeat-x 50%;
+    margin-bottom: 30px;
+}
+.coffee-wrap .coffee h2 span {
+    background-color: #fff;
+    padding: 0 30px;
+}
+.coffee-wrap .coffee h3 {
+    color: rgb(207,102,26);
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.coffee-wrap .coffee p {
+    color: rgb(50,50,50);
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+    margin-bottom: 30px;
+}
+.coffee-wrap .coffee ul {
+    overflow: hidden;
+    width: 1280px;
+    margin: 0 auto 60px;
+    /*outline: 3px solid red;*/
+}
+.coffee-wrap .coffee ul li {
+    width: 400px;
+    float: left;
+    margin-right: 40px;
+}
+.coffee-wrap .coffee ul li:last-child {
+    margin-right: 0;
+    /*background-color: yellow;*/
+}
+.coffee-wrap .coffee ul li a {
+    display: block;
+}
+.coffee-wrap .coffee ul li a img {
+    width: 100%;
+    display: block; /* 이미지 하단에 여백 없애주는 방법 _1) 이미지에 display:block을 해서 부모의 박스 크기에 맞춰주기 _2)float 시켜서 부모랑 같이 둥둥떠다니게 만들기*/
+    /*float: left;*/
+}
+.coffee-wrap .coffee ul li:hover img {
+    opacity: .6;
+    transition: all .5s;
+}
+
+/* coffee&tea 버튼 디자인 공통적용*/
+.btn {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    background-color: rgb(243,130,0);
+    display: inline-block;
+    padding: 0px 50px;
+    line-height: 40px;
+}
+.btn a {  
+    color: #fff;
+}
+/* tea***********************************/
+.tea-wrap {
+    width: 100%;
+    margin-bottom: 80px;
+}
+.tea-wrap .tea {
+    width: 1280px;
+    margin: 0 auto;
+    text-align: center;
+}
+.tea h2 {
+    font-family: 'Merriweather' , serif;
+    font-size: 2em;
+    color: rgb(207,102,26);
+    letter-spacing: 1.2px;
+    background: url(../img/bg_bar6.gif) repeat-x 0 50%;
+    margin-bottom: 30px;
+    text-transform: capitalize;
+}
+.tea h2 span {
+    background: #fff;
+    padding: 0 30px;
+}
+.tea h3 {
+    color: rgb(207,102,26);
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+.tea p {
+    color: rgb(50,50,50);
+    line-height: 1.4;
+    letter-spacing: -0.4px;
+    margin-bottom: 30px;
+}
+.tea ul {
+    margin-bottom: 60px;
+    overflow: hidden; /*float된 자식의 높이를 읽기 위해 사용*/
+    /*outline: 3px solid lime;*/
+}
+.tea ul li {
+    width: 400px;
+    float: left;
+    margin-right: 40px;
+    overflow: hidden; /*넘치는 이미지를 감추기 위한 사용*/
+    
+}
+.tea ul li:last-child {
+    margin-right: 0;
+}
+.tea ul li a {
+    display: block;
+}
+.tea ul li:hover img {
+    transform: scale(1.3);
+    transition: all .5s ease-in;
+}
+.tea ul li a img {
+    width: 100%;
+    display: block;
+}
+

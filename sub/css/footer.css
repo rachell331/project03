@@ -1,0 +1,59 @@
+/* footer.css */
+@charset "utf-8";
+
+/**FOOTER************/
+footer {
+    width: 100%;
+    background-color: lightgray;
+
+}
+footer a {
+    display: inline;
+    color: #333;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+footer .inner-footer {
+    width: 80%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 60px 0;
+    /*overflow: hidden;*/ /*overflow의 다른 기능*/
+    }
+.inner-footer .sitemap {
+    /*margin: 60px auto;*/
+    margin-bottom: 60px;
+}
+.inner-footer .sitemap .mapbox {
+    width: 16.66666666666667%;
+    float: left;
+}
+.inner-footer .sitemap .mapbox h2 {
+    margin-bottom: 20px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 18px;
+    color: rgb(207, 102, 26);
+}
+
+.inner-footer .sitemap .mapbox ul li {
+    letter-spacing: -0.4px;
+    margin-bottom: 10px;
+}
+
+.inner-footer .footer-bottom {
+    border-top: 1px solid #333;
+    padding: 30px 0;
+}
+.inner-footer .footer-bottom .link {
+   width: 60%;
+    float: left;
+}
+.inner-footer .footer-bottom .sns{
+    width: 30%;
+    float: right;
+    text-align: right;
+}
+.inner-footer .footer-bottom p {
+    clear: both;
+}
